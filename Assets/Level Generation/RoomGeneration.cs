@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class RoomGeneration : MonoBehaviour
 {
-    [SerializeField] public GameObject GoStartRoom;
-    [SerializeField] public RoomObject RStartRoom;
+    public GameObject GoStartRoom;
+    public RoomObject RStartRoom;
 
-    [SerializeField] public float fStartRoomSizeX;
-    [SerializeField] public float fStartRoomSizeY;
+    public float fStartRoomSizeX;
+    public float fStartRoomSizeY;
+    public float fStartRoomSizeXY;
+    public int iStartBlockCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        RStartRoom = new Room(GoStartRoom);
+        RStartRoom = new RoomObject(GoStartRoom);
     }
 
     // Update is called once per frame
@@ -21,5 +23,7 @@ public class RoomGeneration : MonoBehaviour
     {
         fStartRoomSizeX = RStartRoom.fRoomSizeX;
         fStartRoomSizeY = RStartRoom.fRoomSizeY;
+        fStartRoomSizeXY = RStartRoom.fRoomSizeXY;
+        iStartBlockCount = RStartRoom.iBlockCount;
     }
 }
